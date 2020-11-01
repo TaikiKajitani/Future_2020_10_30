@@ -13,6 +13,7 @@ namespace Kajitani
         {
             GameObject child = new GameObject("child");
             child.transform.parent = transform;
+            child.transform.localPosition = Vector3.zero;
             if (dan < 20)
             {
                 for (int y = 1; y <= dan; y++)

@@ -39,14 +39,15 @@ namespace Kajitani
         public enum Type
         {
             UserMode,
-            MovieMode
+            MovieMode,
+            ReadMode
         }
 
         static public Player instance { get; private set; } = null;
 
         Vector3 periods;
 
-        public Type type { get; private set; } = Type.UserMode;
+        public Type type { get; set; } = Type.UserMode;
         UnityChan.UnityChanControlScriptWithRgidBody2 user;
         Rigidbody rb;
 

@@ -81,7 +81,6 @@ namespace Kajitani
                 }
             }
         }
-
         // Update is called once per frame
         new void Update()
         {
@@ -100,11 +99,16 @@ namespace Kajitani
                     doorFuck.transform.localPosition = pos_door;
                 }
             }
+#if DEBUG
+            Debug.Log((transform.position + periodLocalPos).ToString() + ":" + (LeadDoor.transform.position + LeadDoor.periodLocalPos).ToString());
+            Debug.DrawLine(transform.position + periodLocalPos, LeadDoor.transform.position + LeadDoor.periodLocalPos, Color.red, 1, false);
+#endif
         }
         //部屋に入った
         public void InRoom()
         {
             Player.instance.transform.position = transform.position + periodLocalPos;
+            Debug.Log(Player.instance.transform.position);
             fstin = true;
         }
 

@@ -6,6 +6,7 @@ Shader "Custom/Geometry/FlatShadingCopy"
 	{
 		_Color("Color", Color) = (1,1,1,1)
 		_MainTex("Albedo", 2D) = "white" {}
+		_Speed("Speed", Range(0,10)) = 1.0
 		_PosX("PosX", Range(-10,10)) = 0
 		_PosY("PosY", Range(-10,10)) = 0
 		_PosZ("PosZ", Range(-10,10)) = 0
@@ -30,6 +31,7 @@ Shader "Custom/Geometry/FlatShadingCopy"
 
 			float4 _Color;
 			sampler2D _MainTex;
+			float _Speed;
 			float _PosX;
 			float _PosY;
 			float _PosZ;
@@ -76,14 +78,6 @@ Shader "Custom/Geometry/FlatShadingCopy"
 				float3 lightDir = normalize(_WorldSpaceLightPos0.xyz);
 				o.light = max(0., dot(normal, lightDir));
 
-				//o.uv = (IN[0].uv + IN[1].uv + IN[2].uv) / 3;
-
-
-				/*vecA = IN[1].pos - IN[0].pos;
-				vecB = IN[2].pos - IN[0].pos;
-				normal = cross(vecA, vecB);
-				normal = normalize(normal);*/
-
 
 				float3 rot_pos, av_pos;
 
@@ -92,14 +86,15 @@ Shader "Custom/Geometry/FlatShadingCopy"
 				//中心座標
 				float3 avv_pos = (IN[0].vertex + IN[1].vertex + IN[2].vertex) *0.3333333333;
 				avv_pos -= float3(_PosX,_PosY,_PosZ);
-				float l_time = _Time.z%10.f;
+				float l_time = (_Time.z*_Speed)%10.f;
 
 				float len = l_time - length(avv_pos);
 
 				//回転値
 				float rot_f = max(0, (len - 1.5f))*2.0f;
 				//色を黒くする
-				o.light *= min(1, max(0, 1 - len * 0.5f));
+				o.light = min(1, max(0, 1 - len * 0.5f));
+				//o.light *= min(1, max(0, 1 - len * 0.5f));
 
 
 				float _cos, _sin, _acos;
@@ -144,7 +139,8 @@ Shader "Custom/Geometry/FlatShadingCopy"
 			half4 frag(g2f i) : COLOR
 			{
 				float4 col = tex2D(_MainTex, i.uv);
-				col.rgb *= i.light * _Color;
+				//col.rgb *= i.light * _Color;
+				col.rgb = (1-i.light)*(1 - col.rgb) + col.rgb;
 				return col;
 			}
 

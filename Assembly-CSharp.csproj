@@ -52,11 +52,16 @@
     <UnityVersion>2020.1.8f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\Singleton\Debug\DebugMesh.cs" />
     <Compile Include="Assets\Script\UI\ToBillboard.cs" />
     <Compile Include="Assets\Script\Player\SeaCowCrate.cs" />
     <Compile Include="Assets\Shader\Back\Fish.cs" />
+    <Compile Include="Assets\Script\遷移\GameSceneManager.cs" />
+    <Compile Include="Assets\Script\遷移\SceneNames.cs" />
+    <Compile Include="Assets\Script\Item\ItemReport.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\AutoBlink.cs" />
     <Compile Include="Assets\Script\Player\PlayerKeys.cs" />
+    <Compile Include="Assets\Script\FireSystem\YamlUtility.cs" />
     <Compile Include="Assets\Script\character\UnityChanControlScriptWithRgidBody2.cs" />
     <Compile Include="Assets\Script\DrawLine1.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\CameraController.cs" />
@@ -66,14 +71,17 @@
     <Compile Include="Assets\Script\Singleton\SeaSeter.cs" />
     <Compile Include="Assets\Script\Static\StaticStatus.cs" />
     <Compile Include="Assets\Script\Gimick\Stairs.cs" />
+    <Compile Include="Assets\Script\FireSystem\YamlExampleOfUse.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\SplashScreen\Scripts\SplashScreen.cs" />
     <Compile Include="Assets\EscalatorPro\Script\Runtime\Stair.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\SpringCollider.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\ThirdPersonCamera.cs" />
-    <Compile Include="Assets\Script\Gimick\Item.cs" />
+    <Compile Include="Assets\Script\Camera\ZoomCamera.cs" />
+    <Compile Include="Assets\Script\Gimick\ItemGet.cs" />
     <Compile Include="Assets\Script\ShapeSearch.cs" />
     <Compile Include="Assets\Script\Camera\HitCamera.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\IKCtrlRightHand.cs" />
+    <Compile Include="Assets\Script\Gimick\AutoRotation.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\Singleton\SingletonMonoBehaviour.cs" />
     <Compile Include="Assets\Script\Gimick\EmissionPlayer.cs" />
@@ -85,7 +93,7 @@
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\RandomWind.cs" />
     <Compile Include="Assets\unity-chan!\Unity-chan! Model\Scripts\UnityChanControlScriptWithRgidBody.cs" />
     <Compile Include="Assets\Script\Player\SeaCowIns.cs" />
-    <Compile Include="Assets\Script\KeepDistance.cs" />
+    <Compile Include="Assets\Script\Camera\KeepDistance.cs" />
     <Compile Include="Assets\Script\UVauto.cs" />
     <Compile Include="Assets\Script\Door.cs" />
     <Compile Include="Assets\Script\StairsCreate.cs" />
@@ -93,8 +101,6 @@
     <Compile Include="Assets\Script\NearTarget.cs" />
     <Compile Include="Assets\Script\glass_Creater.cs" />
     <Compile Include="Assets\Script\UI\Fade.cs" />
-    <Compile Include="Assets\Script\FireSystem\YamlUtility.cs" />
-    <Compile Include="Assets\Script\FireSystem\YamlExampleOfUse.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\unity-chan!\Unity-chan! Model\Art\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
@@ -120,6 +126,7 @@
      <None Include="Assets\Shader\FlatShadingCopy.shader" />
      <None Include="Assets\EscalatorPro\README.txt" />
      <None Include="Assets\unity-chan!\Unity-chan! Model\Art\Stage\Shader\AlphaMask.shader" />
+     <None Include="Assets\BodyGuards\ReadMe.txt.txt" />
      <None Include="Assets\unity-chan!\Unity-chan! Model\Art\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
      <None Include="Assets\Shader\s_toBlack.shader" />
      <None Include="Assets\Shader\m_Crystal.shader" />

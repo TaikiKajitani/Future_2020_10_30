@@ -12,16 +12,15 @@ namespace Kajitani
         public Material monoTone;
 
         public bool natural = true;
-
-        public bool m_debug;
+        
         [Range(0.0f, 1.0f)]
         public float rad = 0;
         
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             renderer = GetComponent<Image>();
-            SetAlpha(1);
+                SetAlpha(1);
         }
         float alpha_prm = 0;
 
@@ -58,10 +57,6 @@ namespace Kajitani
                     renderer.enabled = false;
                 }
                 SetAlpha(Mathf.Max(0, alpha_prm / fadeSpeed));
-            }
-            if (m_debug)
-            {
-                SetAlpha(rad);
             }
         }
         //数値を適応

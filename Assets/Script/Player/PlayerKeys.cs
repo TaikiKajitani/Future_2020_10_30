@@ -17,8 +17,16 @@ namespace Kajitani
         Black
     }
     [System.Serializable]
-    public struct Key
+    public class Item
     {
+
+    }
+
+    //鍵
+        [System.Serializable]
+    public class Key : Item
+    {
+        //鍵の色
         public GameObject uiKey;
         public KeyColor color;
         public Key(KeyColor c)
@@ -74,6 +82,10 @@ namespace Kajitani
         }
     }
 
+    public class Report:Item
+    {
+
+    }
 
 
     public class PlayerKeys : SingletonMonoBehaviour<PlayerKeys>
